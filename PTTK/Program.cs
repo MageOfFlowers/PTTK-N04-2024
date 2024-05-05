@@ -14,6 +14,7 @@ namespace PTTK
         [STAThread]
         static void Main()
         {
+            string connString = "Server=.;Database=QL_HSUT;Integrated Security=True;";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MhChonNhaTuyenDung());
