@@ -15,9 +15,15 @@ namespace PTTK
         public MhChonNhaTuyenDung()
         {
             InitializeComponent();
+            
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void MhChonNhaTuyenDung_Load(object sender, EventArgs e)
         {
 
         }

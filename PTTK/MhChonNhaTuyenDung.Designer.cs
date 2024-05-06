@@ -39,6 +39,8 @@
             this.lbSoLuongYC = new System.Windows.Forms.Label();
             this.lbSoLuongChapNhan = new System.Windows.Forms.Label();
             this.lbSoLuongTuChoi = new System.Windows.Forms.Label();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnQuayLai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MaHSDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChapNhanDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TuChoiDGV)).BeginInit();
@@ -148,11 +150,31 @@
             this.lbSoLuongTuChoi.TabIndex = 10;
             this.lbSoLuongTuChoi.Text = "Số lượng";
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(693, 487);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 11;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.Location = new System.Drawing.Point(597, 487);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(75, 23);
+            this.btnQuayLai.TabIndex = 12;
+            this.btnQuayLai.Text = "Quay Lại";
+            this.btnQuayLai.UseVisualStyleBackColor = true;
+            // 
             // MhChonNhaTuyenDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 504);
+            this.ClientSize = new System.Drawing.Size(815, 522);
+            this.Controls.Add(this.btnQuayLai);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.lbSoLuongTuChoi);
             this.Controls.Add(this.lbSoLuongChapNhan);
             this.Controls.Add(this.lbSoLuongYC);
@@ -166,6 +188,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MhChonNhaTuyenDung";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MhChonNhaTuyenDung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MaHSDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChapNhanDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TuChoiDGV)).EndInit();
@@ -187,6 +210,8 @@
         private System.Windows.Forms.Label lbSoLuongYC;
         private System.Windows.Forms.Label lbSoLuongChapNhan;
         private System.Windows.Forms.Label lbSoLuongTuChoi;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnQuayLai;
     }
 }
 
