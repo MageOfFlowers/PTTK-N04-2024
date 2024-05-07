@@ -8,6 +8,21 @@ go
 create database QL_HSUT
 go
 
+/*
+drop table BANG_CAP
+drop table DANG_KY_UNG_TUYEN
+drop table UNG_VIEN
+drop table CT_HINH_THUC
+drop table TT_DANG_TUYEN
+drop table HINH_THUC
+drop table THANH_TOAN
+drop table TT_QUANG_CAO
+drop table DOANH_NGHIEP
+drop table UU_DAI
+*/
+
+use QL_HSUT
+
 create table UU_DAI (
 	MaUD varchar(10) primary key,
 	ChiTietUD varchar(20)
@@ -84,7 +99,8 @@ create table DANG_KY_UNG_TUYEN (
 	NgayNop date not null,
 	TrangThai varchar(20),
 	NgayGui date,
-	PhanHoi varchar(50)
+	PhanHoi varchar(50),
+	DoUuTien int
 )
 
 create table BANG_CAP (
