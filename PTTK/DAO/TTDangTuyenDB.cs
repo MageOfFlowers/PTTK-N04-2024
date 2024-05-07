@@ -15,7 +15,7 @@ namespace PTTK.DAO
         internal IList<TTDangTuyen> LayTTDangTuyen(string MaSoThue)
         {
             List<TTDangTuyen> db = new List<TTDangTuyen>();
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 using (SqlCommand command = new SqlCommand("LayTTDangTuyen", connection))
                 {

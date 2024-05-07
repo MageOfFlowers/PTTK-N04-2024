@@ -15,7 +15,7 @@ namespace PTTK.DAO
     {
         internal (DataTable, DataTable, DataTable) LayDangKyUngTuyen(string MaSoThue)
         {
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 using (SqlCommand command = new SqlCommand("LayDangKyUngTuyen", connection))
                 {
@@ -30,12 +30,12 @@ namespace PTTK.DAO
                         adapter.Fill(result);
                         foreach (DataRow row in result.Rows)
                         {
-                            if (row["DuDieuKien"].ToString() == "ChapNhan")
+                            if (row["TrangThai"].ToString() == "ChapNhan")
                             {
                                 result1.Rows.Add(row);
                                 result.Rows.Remove(row);
                             }
-                            else if (row["DuDieuKien"].ToString() == "TuChoi")
+                            else if (row["TrangThai"].ToString() == "TuChoi")
                             {
                                 result2.Rows.Add(row);
                                 result.Rows.Remove(row);
@@ -50,7 +50,7 @@ namespace PTTK.DAO
 
         internal void LuuDangKyUngTuyen(DataTable ChoGui, DataTable ChapNhan, DataTable TuChoi)
         {
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 using (SqlCommand command = new SqlCommand("LuuDangKyUngTuyen", connection))
                 {
@@ -61,26 +61,26 @@ namespace PTTK.DAO
                         foreach (DataRow row in ChoGui.Rows)
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
-                            command.Parameters.Add(new SqlParameter("@DuDieuKien", SqlDbType.VarChar)).Value = "ChoGui";
+                            command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "ChoGui";
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
-                            command.Parameters.Remove(command.Parameters["@DuDieuKien"]);
+                            command.Parameters.Remove(command.Parameters["@TrangThai"]);
                         }
                         foreach (DataRow row in ChapNhan.Rows)
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
-                            command.Parameters.Add(new SqlParameter("@DuDieuKien", SqlDbType.VarChar)).Value = "ChapNhan";
+                            command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "ChapNhan";
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
-                            command.Parameters.Remove(command.Parameters["@DuDieuKien"]);
+                            command.Parameters.Remove(command.Parameters["@TrangThai"]);
                         }
                         foreach (DataRow row in TuChoi.Rows)
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
-                            command.Parameters.Add(new SqlParameter("@DuDieuKien", SqlDbType.VarChar)).Value = "TuChoi";
+                            command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "TuChoi";
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
-                            command.Parameters.Remove(command.Parameters["@DuDieuKien"]);
+                            command.Parameters.Remove(command.Parameters["@TrangThai"]);
                         }
                     }
                 }

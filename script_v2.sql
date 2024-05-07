@@ -1,12 +1,12 @@
 ﻿﻿USE MASTER
-go
+GO
 
 IF DB_ID('QL_HSUT') IS NOT NULL
 	DROP DATABASE QL_HSUT
-go
+GO
 
-create database QL_HSUT
-go
+CREATE DATABASE QL_HSUT
+GO
 
 /*
 drop table BANG_CAP
@@ -48,12 +48,15 @@ create table HINH_THUC (
 )
 
 create table TT_DANG_TUYEN (
-	MaDT varchar(10) not null primary key,
+	MaTT varchar(10) not null primary key,
+	MaSoThue VARCHAR (10) NOT NULL,
 	ViTriTuyen varchar(20) not null,
 	SoLuongTuyen int not null,
 	BatDauTuyen date not null,
 	KetThucTuyen date not null,
-	YeuCau varchar(50)
+	YeuCau varchar(50),
+	foreign key (MaSoThue)
+	references dbo.DOANH_NGHIEP(MaSoThue)
 )
 
 create table TT_QUANG_CAO (
@@ -102,11 +105,15 @@ create table UNG_VIEN (
 create table DANG_KY_UNG_TUYEN (
 	MaHS varchar(10) primary key,
 	CCCD varchar(10),
+	MaTT VARCHAR(10),
 	NgayNop date not null,
 	TrangThai varchar(20),
 	NgayGui date,
 	PhanHoi varchar(50),
 	DoUuTien int,
+	constraint FK_DK_DN
+	foreign key (MaTT)
+	REFERENCES dbo.TT_DANG_TUYEN(MaTT),
 	constraint FK_DK_UV
 	foreign key (CCCD)
 	references UNG_VIEN(CCCD)
