@@ -52,6 +52,12 @@
     <Compile Include="BUS\HoSoDaXuLy.cs" />
     <Compile Include="BUS\UngVien.cs" />
     <Compile Include="BUS\DangKyUngTuyen.cs" />
+    <Compile Include="DangKyUngVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKyUngVien.Designer.cs">
+      <DependentUpon>DangKyUngVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\TTDangTuyenDB.cs" />
     <Compile Include="MHThanhToan.cs">
       <SubType>Form</SubType>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DangKyUngVien.resx">
+      <DependentUpon>DangKyUngVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MhChonNhaTuyenDung.resx">
       <DependentUpon>MhChonNhaTuyenDung.cs</DependentUpon>
     </EmbeddedResource>
