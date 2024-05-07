@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DangKyUngVien.resx">
+      <DependentUpon>DangKyUngVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MhChonNhaTuyenDung.resx">
       <DependentUpon>MhChonNhaTuyenDung.cs</DependentUpon>
     </EmbeddedResource>
