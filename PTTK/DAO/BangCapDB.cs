@@ -14,7 +14,7 @@ namespace PTTK.DAO
         internal DataTable LayBangCap(string MaHS)
         {
             DataTable result = new DataTable();
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 using (SqlCommand command = new SqlCommand("LayBangCap", connection))
                 {

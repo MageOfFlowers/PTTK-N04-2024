@@ -18,3 +18,4 @@ E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.Properties.Resources.resources
 E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.GenerateResource.cache
 E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.CoreCompileInputs.cache
 >>>>>>> Stashed changes
+C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MHThanhToan.resources

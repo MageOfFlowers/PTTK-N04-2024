@@ -17,7 +17,7 @@ namespace PTTK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MhChonNhaTuyenDung());
+            Application.Run(new MHThanhToan("heh"));
         }
     }
 }

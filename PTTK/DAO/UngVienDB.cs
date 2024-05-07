@@ -14,7 +14,7 @@ namespace PTTK.DAO
         internal UngVien LayThongTinUngVien(string CCCD)
         {
             
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 using (SqlCommand command = new SqlCommand("LayThongTinUngVien", connection))
                 {

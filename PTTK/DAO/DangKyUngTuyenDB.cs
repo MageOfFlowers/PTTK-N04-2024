@@ -15,7 +15,7 @@ namespace PTTK.DAO
     {
         internal (DataTable, DataTable, DataTable) LayDangKyUngTuyen(string MaSoThue)
         {
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 using (SqlCommand command = new SqlCommand("LayDangKyUngTuyen", connection))
                 {
@@ -50,7 +50,7 @@ namespace PTTK.DAO
 
         internal void LuuDangKyUngTuyen(DataTable ChoGui, DataTable ChapNhan, DataTable TuChoi)
         {
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 using (SqlCommand command = new SqlCommand("LuuDangKyUngTuyen", connection))
                 {

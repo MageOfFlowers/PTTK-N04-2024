@@ -10,18 +10,21 @@ namespace PTTK.DAO
 {
     internal class ThanhToanDB
     {
+        private readonly SqlConnection connection = new SqlConnection(Program.connString)
         public void ThanhToan(ThanhToan tt)
         {
-            using (SqlConnection connection = new SqlConnection(Program.connString))
+
+            string proc_name = "thanh_toan";
+            try
             {
-                try
+                using (SqlCommand command = new SqlCommand(proc_name, connection))
                 {
                     connection.Open();
-                    string proc_name = "thanh_toan";
+                    command.Parameters.Add("@ma_qc", tt);
                 }
-                catch 
-                { 
-                }
+            }
+            catch
+            {
             }
         }
     }
