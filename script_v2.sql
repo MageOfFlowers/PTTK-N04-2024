@@ -30,9 +30,9 @@ create table UU_DAI (
 
 create table DOANH_NGHIEP (
 	MaSoThue varchar(10) primary key,
-	TenCongTy varchar(20) not null,
-	DiaChi varchar(50) not null,
-	Email varchar(30) not null,
+	TenCongTy varchar(50) not null,
+	DiaChi varchar(100) not null,
+	Email varchar(50) not null,
 	NguoiDaiDien varchar(20) not null,
 	TrangThai varchar(20),
 	UuDai varchar(10),
@@ -92,6 +92,7 @@ create table CT_HINH_THUC (
 )
 
 create table UNG_VIEN (
+	Anh VARBINARY(Max),
 	CCCD varchar(10) primary key,
 	HoTen varchar(20) not null,
 	SDT varchar(10) not null,
