@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\bin\Debug\PTTK.exe.config
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\bin\Debug\PTTK.exe
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\bin\Debug\PTTK.pdb
@@ -9,3 +10,11 @@ C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.GenerateResource.
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.CoreCompileInputs.cache
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.exe
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.pdb
+=======
+E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.AssemblyReference.cache
+E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MhChonNhaTuyenDung.resources
+E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MHXacThucHoSoDaXuLy.resources
+E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.Properties.Resources.resources
+E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.GenerateResource.cache
+E:\PTTK\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.CoreCompileInputs.cache
+>>>>>>> Stashed changes
