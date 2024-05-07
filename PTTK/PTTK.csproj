@@ -52,12 +52,9 @@
     <Compile Include="BUS\HoSoDaXuLy.cs" />
     <Compile Include="BUS\UngVien.cs" />
     <Compile Include="BUS\DangKyUngTuyen.cs" />
-    <Compile Include="DangKyUngVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DangKyUngVien.Designer.cs">
-      <DependentUpon>DangKyUngVien.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DAO\BangCapDB.cs" />
+    <Compile Include="DAO\UngVienDB.cs" />
+    <Compile Include="DAO\DangKyUngTuyenDB.cs" />
     <Compile Include="DAO\TTDangTuyenDB.cs" />
     <Compile Include="MHThanhToan.cs">
       <SubType>Form</SubType>

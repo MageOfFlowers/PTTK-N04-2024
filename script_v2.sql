@@ -8,6 +8,21 @@ go
 create database QL_HSUT
 go
 
+/*
+drop table BANG_CAP
+drop table DANG_KY_UNG_TUYEN
+drop table UNG_VIEN
+drop table CT_HINH_THUC
+drop table THANH_TOAN
+drop table TT_QUANG_CAO
+drop table TT_DANG_TUYEN
+drop table HINH_THUC
+drop table DOANH_NGHIEP
+drop table UU_DAI
+*/
+
+use QL_HSUT
+
 create table UU_DAI (
 	MaUD varchar(10) primary key,
 	ChiTietUD varchar(20)
@@ -26,25 +41,6 @@ create table DOANH_NGHIEP (
 	references UU_DAI(MaUD)
 )
 
-create table TT_QUANG_CAO (
-	MaQC varchar(10) primary key,
-	TongSoTien numeric not null,
-	TrangThaiThanhToan bit,
-	TrangThaiDangTuyen bit
-)
-
-create table THANH_TOAN (
-	MaQC varchar(10),
-	LanTra int check(LanTra in (1, 2, 3, 4)),
-	SoTien numeric not null,
-	NgayThanhToan date,
-	PhuongThucTT varchar(20),
-	primary key (MaQC, LanTra),
-	constraint FK_TT_QC
-	foreign key (MaQC)
-	references TT_QUANG_CAO(MaQC)
-)
-
 create table HINH_THUC (
 	MaHinhThuc varchar(10) primary key,
 	TenHinhThuc varchar(20) not null,
@@ -58,6 +54,29 @@ create table TT_DANG_TUYEN (
 	BatDauTuyen date not null,
 	KetThucTuyen date not null,
 	YeuCau varchar(50)
+)
+
+create table TT_QUANG_CAO (
+	MaQC varchar(10) primary key,
+	MaDT varchar(10) not null,
+	TongSoTien numeric not null,
+	TrangThaiThanhToan bit,
+	TrangThaiDangTuyen bit,
+	constraint FK_QC_DT
+	foreign key (MaDT)
+	references TT_DANG_TUYEN(MaDT)
+)
+
+create table THANH_TOAN (
+	MaQC varchar(10),
+	LanTra int check(LanTra in (1, 2, 3, 4)),
+	SoTien numeric not null,
+	NgayThanhToan date,
+	PhuongThucTT varchar(20),
+	primary key (MaQC, LanTra),
+	constraint FK_TT_QC
+	foreign key (MaQC)
+	references TT_QUANG_CAO(MaQC)
 )
 
 create table CT_HINH_THUC (
@@ -81,10 +100,15 @@ create table UNG_VIEN (
 
 create table DANG_KY_UNG_TUYEN (
 	MaHS varchar(10) primary key,
+	CCCD varchar(10),
 	NgayNop date not null,
 	TrangThai varchar(20),
 	NgayGui date,
-	PhanHoi varchar(50)
+	PhanHoi varchar(50),
+	DoUuTien int,
+	constraint FK_DK_UV
+	foreign key (CCCD)
+	references UNG_VIEN(CCCD)
 )
 
 create table BANG_CAP (

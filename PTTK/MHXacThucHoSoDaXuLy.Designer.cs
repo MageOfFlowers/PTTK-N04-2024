@@ -128,6 +128,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MHXacThucHoSoDaXuLy";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.MHXacThucHoSoDaXuLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BangCapDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UngVienPB)).EndInit();
             this.ResumeLayout(false);

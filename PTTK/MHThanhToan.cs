@@ -12,9 +12,16 @@ namespace PTTK
 {
     public partial class MHThanhToan : Form
     {
-        public MHThanhToan()
+        string MaQC;
+        public MHThanhToan(string m_MaQC)
         {
             InitializeComponent();
+            MaQC = m_MaQC;
+        }
+
+        private void MHThanhToan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

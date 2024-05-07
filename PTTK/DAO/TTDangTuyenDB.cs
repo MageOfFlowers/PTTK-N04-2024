@@ -6,20 +6,47 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace PTTK.DAO
 {
-    public class TTDangTuyenDB
+    internal class TTDangTuyenDB
     {
-        public TTDangTuyen LayTTDangTuyen()
+        internal IList<TTDangTuyen> LayTTDangTuyen(string MaSoThue)
         {
-            TTDangTuyen db = new TTDangTuyen();
-            SqlParameter[] parameters = new SqlParameter[]
+            List<TTDangTuyen> db = new List<TTDangTuyen>();
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
-                new SqlParameter("@param1", SqlDbType.Int) { Value = 123 },
-                new SqlParameter("@param2", SqlDbType.VarChar, 50) { Value = "test" }
-            };
-            db.ExecuteStoredProcedure("YourStoredProcedure", parameters);
+                using (SqlCommand command = new SqlCommand("LayTTDangTuyen", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@MaSoThue", SqlDbType.VarChar)).Value=MaSoThue;
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable result = new DataTable();
+                        adapter.Fill(result);
+                        foreach (DataRow t in result.Rows)
+                        {
+                            TTDangTuyen tmp = new TTDangTuyen();
+                            tmp.MaTT = t["MaTT"].ToString();
+                            tmp.ViTriDangTuyen = t["ViTriDangTuyen"].ToString();
+                            tmp.SoLuongTuyenDung = Convert.ToInt32(t["SoLuongTuyenDung"]);
+                            tmp.BatDauTuyenDung = Convert.ToDateTime(t["BatDauTuyenDung"]);
+                            tmp.KetThucTuyenDung = Convert.ToDateTime(t["KetThucTuyenDung"]);
+                            tmp.HanTuyenDung = Convert.ToDateTime(t["HanTuyenDung"]);
+                            tmp.YeuCau = t["YeuCau"].ToString();
+                            tmp.MaSoThue = t["MaSoThue"].ToString();
+                            db.Add(tmp);
+                        }
+
+                        return db;
+                    }
+                }
+            }
         }
+
+
+
     }
 }
