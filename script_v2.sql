@@ -96,11 +96,15 @@ create table UNG_VIEN (
 
 create table DANG_KY_UNG_TUYEN (
 	MaHS varchar(10) primary key,
+	CCCD varchar(10),
 	NgayNop date not null,
 	TrangThai varchar(20),
 	NgayGui date,
 	PhanHoi varchar(50),
-	DoUuTien int
+	DoUuTien int,
+	constraint FK_DK_UV
+	foreign key (CCCD)
+	references UNG_VIEN(CCCD)
 )
 
 create table BANG_CAP (
