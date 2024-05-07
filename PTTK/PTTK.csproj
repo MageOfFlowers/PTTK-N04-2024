@@ -47,11 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BangCap.cs" />
+    <Compile Include="BUS\ThanhToan.cs" />
     <Compile Include="BUS\TTQuangCao.cs" />
     <Compile Include="BUS\TTDangTuyen.cs" />
     <Compile Include="BUS\HoSoDaXuLy.cs" />
     <Compile Include="BUS\UngVien.cs" />
     <Compile Include="BUS\DangKyUngTuyen.cs" />
+    <Compile Include="DAO\ThanhToanDB.cs" />
     <Compile Include="DAO\TTDangTuyenDB.cs" />
     <Compile Include="MHThanhToan.cs">
       <SubType>Form</SubType>
