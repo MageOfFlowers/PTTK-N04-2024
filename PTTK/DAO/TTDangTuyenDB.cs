@@ -26,15 +26,16 @@ namespace PTTK.DAO
                     {
                         DataTable result = new DataTable();
                         adapter.Fill(result);
+                        Console.WriteLine(result);
+                        Console.WriteLine(MaSoThue);
                         foreach (DataRow t in result.Rows)
                         {
                             TTDangTuyen tmp = new TTDangTuyen();
                             tmp.MaTT = t["MaTT"].ToString();
-                            tmp.ViTriDangTuyen = t["ViTriDangTuyen"].ToString();
-                            tmp.SoLuongTuyenDung = Convert.ToInt32(t["SoLuongTuyenDung"]);
-                            tmp.BatDauTuyenDung = Convert.ToDateTime(t["BatDauTuyenDung"]);
-                            tmp.KetThucTuyenDung = Convert.ToDateTime(t["KetThucTuyenDung"]);
-                            tmp.HanTuyenDung = Convert.ToDateTime(t["HanTuyenDung"]);
+                            tmp.ViTriTuyen = t["ViTriTuyen"].ToString();
+                            tmp.SoLuongTuyen = Convert.ToInt32(t["SoLuongTuyen"]);
+                            tmp.BatDauTuyen = Convert.ToDateTime(t["BatDauTuyen"]);
+                            tmp.KetThucTuyen = Convert.ToDateTime(t["KetThucTuyen"]);
                             tmp.YeuCau = t["YeuCau"].ToString();
                             tmp.MaSoThue = t["MaSoThue"].ToString();
                             db.Add(tmp);

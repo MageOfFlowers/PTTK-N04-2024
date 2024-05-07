@@ -11,11 +11,10 @@ namespace PTTK.BUS
     public class TTDangTuyen
     {
         public string MaTT { get; set; }
-        public string ViTriDangTuyen { get; set; }
-        public int SoLuongTuyenDung { get; set; }
-        public DateTime BatDauTuyenDung { get; set; }
-        public DateTime KetThucTuyenDung { get; set; }
-        public DateTime HanTuyenDung { get; set; }
+        public string ViTriTuyen { get; set; }
+        public int SoLuongTuyen { get; set; }
+        public DateTime BatDauTuyen { get; set; }
+        public DateTime KetThucTuyen { get; set; }
         public string YeuCau {  get; set; }
         public string MaSoThue {  get; set; }
 

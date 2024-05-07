@@ -28,6 +28,7 @@ namespace PTTK
             lbNgayNopHoSo.Text = "Ngày nộp: " + NgayNop;
             MemoryStream ms = new MemoryStream(uv.Anh);
             UngVienPB.Image = Image.FromStream(ms);
+            UngVienPB.SizeMode = PictureBoxSizeMode.StretchImage;
             BangCapDGV.DataSource = bc.TimBangCap(MaHS);
         }
 

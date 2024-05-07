@@ -29,10 +29,10 @@ namespace PTTK.DAO
                         {
                             UngVien db = new UngVien();
                             db.CCCD = t["CCCD"].ToString();
-                            db.SDT = t["ViTriDangTuyen"].ToString();
+                            db.SDT = t["SDT"].ToString();
                             db.Anh = (byte[])t["Anh"];
-                            db.HoTen = t["YeuCau"].ToString();
-                            db.DiaChi = t["MaSoThue"].ToString();
+                            db.HoTen = t["HoTen"].ToString();
+                            db.DiaChi = t["DiaChi"].ToString();
                             return db;
                         }                        
                     }

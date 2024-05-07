@@ -28,17 +28,30 @@ namespace PTTK.DAO
                         DataTable result1 = new DataTable();
                         DataTable result2 = new DataTable();
                         adapter.Fill(result);
-                        foreach (DataRow row in result.Rows)
+                        adapter.Fill(result1);
+                        adapter.Fill(result2);
+                        for (int i = 0; i < result.Rows.Count; i++)
                         {
-                            if (row["TrangThai"].ToString() == "ChapNhan")
+                            if (result.Rows[i]["TrangThai"].ToString() != "ChoGui")
                             {
-                                result1.Rows.Add(row);
-                                result.Rows.Remove(row);
+                                result.Rows.Remove(result.Rows[i]);
+                                i--;
                             }
-                            else if (row["TrangThai"].ToString() == "TuChoi")
+                        }
+                        for (int i = 0; i < result1.Rows.Count; i++)
+                        {
+                            if (result1.Rows[i]["TrangThai"].ToString() != "ChapNhan")
                             {
-                                result2.Rows.Add(row);
-                                result.Rows.Remove(row);
+                                result1.Rows.Remove(result1.Rows[i]);
+                                i--;
+                            }
+                        }
+                        for (int i = 0; i < result2.Rows.Count; i++)
+                        {
+                            if (result2.Rows[i]["TrangThai"].ToString() != "TuChoi")
+                            {
+                                result2.Rows.Remove(result2.Rows[i]);
+                                i--;
                             }
                         }
                         return (result,result1,result2);
@@ -55,7 +68,7 @@ namespace PTTK.DAO
                 using (SqlCommand command = new SqlCommand("LuuDangKyUngTuyen", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-
+                    connection.Open();
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
                         foreach (DataRow row in ChoGui.Rows)
@@ -83,6 +96,7 @@ namespace PTTK.DAO
                             command.Parameters.Remove(command.Parameters["@TrangThai"]);
                         }
                     }
+                    connection.Close();
                 }
             }
         }

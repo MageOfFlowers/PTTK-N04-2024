@@ -61,13 +61,13 @@ create table TT_DANG_TUYEN (
 
 create table TT_QUANG_CAO (
 	MaQC varchar(10) primary key,
-	MaDT varchar(10) not null,
+	MaTT varchar(10) not null,
 	TongSoTien numeric not null,
 	TrangThaiThanhToan bit,
 	TrangThaiDangTuyen bit,
 	constraint FK_QC_DT
-	foreign key (MaDT)
-	references TT_DANG_TUYEN(MaDT)
+	foreign key (MaTT)
+	references TT_DANG_TUYEN(MaTT)
 )
 
 create table THANH_TOAN (
@@ -83,12 +83,12 @@ create table THANH_TOAN (
 )
 
 create table CT_HINH_THUC (
-	MaDT varchar(10),
+	MaTT varchar(10),
 	MaHinhThuc varchar(10),
-	primary key (MaDT, MaHinhThuc),
+	primary key (MaTT, MaHinhThuc),
 	constraint FK_CTHT_DT
-	foreign key (MaDT)
-	references TT_DANG_TUYEN(MaDT),
+	foreign key (MaTT)
+	references TT_DANG_TUYEN(MaTT),
 	constraint FK_CTHT_HT
 	foreign key (MaHinhThuc)
 	references HINH_THUC(MaHinhThuc)

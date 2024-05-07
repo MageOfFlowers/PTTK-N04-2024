@@ -77,11 +77,11 @@ namespace PTTK
 
         private void ViTriCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MaHSDGV.Rows.Clear();
-            ChapNhanDGV.Rows.Clear();
-            TuChoiDGV.Rows.Clear();
-            lbSL.Text = ((TTDangTuyen) ViTriCB.SelectedItem).SoLuongTuyenDung.ToString();
-            lbViTri.Text = ((TTDangTuyen)ViTriCB.SelectedItem).SoLuongTuyenDung.ToString();
+            //MaHSDGV.Rows.Clear();
+            //ChapNhanDGV.Rows.Clear();
+            //TuChoiDGV.Rows.Clear();
+            lbSL.Text = ((TTDangTuyen) ViTriCB.SelectedItem).SoLuongTuyen.ToString();
+            lbViTri.Text = ((TTDangTuyen)ViTriCB.SelectedItem).SoLuongTuyen.ToString();
             var r = DangKyUngTuyen.TimDangKyUngTuyen(((TTDangTuyen)ViTriCB.SelectedItem).MaTT.ToString());
             ChoGui = r.Item1 as DataTable;
             ChapNhan = r.Item2 as DataTable;
@@ -89,62 +89,58 @@ namespace PTTK
             MaHSDGV.DataSource = ChoGui;
             ChapNhanDGV.DataSource = ChapNhan;
             TuChoiDGV.DataSource = TuChoi;
-            lbSLYC.Text = MaHSDGV.Rows.Count.ToString();
-            lbSLCN.Text = ChapNhanDGV.Rows.Count.ToString();
-            lbSLTC.Text = TuChoiDGV.Rows.Count.ToString();
+            lbSLYC.Text = (MaHSDGV.Rows.Count-1).ToString();
+            lbSLCN.Text = (ChapNhanDGV.Rows.Count-1).ToString();
+            lbSLTC.Text = (TuChoiDGV.Rows.Count-1).ToString();
         }
 
         private void MaHSDGV_ChapNhan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && (e.ColumnIndex == 0))
             {
-                DangKyUngTuyen obj = (DangKyUngTuyen)MaHSDGV.Rows[e.RowIndex].DataBoundItem;
-                ChapNhan.Rows.Add(obj);
-                ChapNhanDGV.DataSource = ChapNhan;
+                ChapNhan.ImportRow(ChoGui.Rows[e.RowIndex]);
                 ChoGui.Rows.Remove(ChoGui.Rows[e.RowIndex]);
+                ChapNhanDGV.DataSource = ChapNhan;
                 MaHSDGV.DataSource = ChoGui;
             }
-            lbSLYC.Text = MaHSDGV.Rows.Count.ToString();
-            lbSLCN.Text = ChapNhanDGV.Rows.Count.ToString();
+            lbSLYC.Text = (MaHSDGV.Rows.Count - 1).ToString();
+            lbSLCN.Text = (ChapNhanDGV.Rows.Count - 1).ToString();
         }
         private void MaHSDGV_TuChoi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && (e.ColumnIndex == 1))
             {
-                DangKyUngTuyen obj = (DangKyUngTuyen)MaHSDGV.Rows[e.RowIndex].DataBoundItem;
-                TuChoi.Rows.Add(obj);
-                TuChoiDGV.DataSource = TuChoi;
+                TuChoi.ImportRow(ChoGui.Rows[e.RowIndex]);               
                 ChoGui.Rows.Remove(ChoGui.Rows[e.RowIndex]);
                 MaHSDGV.DataSource = ChoGui;
+                TuChoiDGV.DataSource = TuChoi;
             }
-            lbSLYC.Text = MaHSDGV.Rows.Count.ToString();
-            lbSLTC.Text = TuChoiDGV.Rows.Count.ToString();
+            lbSLYC.Text = (MaHSDGV.Rows.Count - 1).ToString();
+            lbSLTC.Text = (TuChoiDGV.Rows.Count - 1).ToString();
         }
         private void ChapNhanDGV_TroVe1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {
-                DangKyUngTuyen obj = (DangKyUngTuyen)ChapNhanDGV.Rows[e.RowIndex].DataBoundItem;
-                ChoGui.Rows.Add(obj);
+                ChoGui.ImportRow(ChapNhan.Rows[e.RowIndex]);               
+                ChapNhan.Rows.Remove(ChapNhan.Rows[e.RowIndex]);
                 MaHSDGV.DataSource = ChoGui;
-                ChapNhan.Rows.Remove(ChoGui.Rows[e.RowIndex]);
                 ChapNhanDGV.DataSource = ChapNhan;
             }
-            lbSLYC.Text = MaHSDGV.Rows.Count.ToString();
-            lbSLCN.Text = ChapNhanDGV.Rows.Count.ToString();
+            lbSLYC.Text = (MaHSDGV.Rows.Count - 1).ToString();
+            lbSLCN.Text = (ChapNhanDGV.Rows.Count - 1).ToString();
         }
         private void TuChoiDGV_TroVe2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {
-                DangKyUngTuyen obj = (DangKyUngTuyen)TuChoiDGV.Rows[e.RowIndex].DataBoundItem;
-                ChoGui.Rows.Add(obj);
+                ChoGui.ImportRow(TuChoi.Rows[e.RowIndex]);             
+                TuChoi.Rows.Remove(TuChoi.Rows[e.RowIndex]);
                 MaHSDGV.DataSource = ChoGui;
-                TuChoi.Rows.Remove(ChoGui.Rows[e.RowIndex]);
                 TuChoiDGV.DataSource = TuChoi;
             }
-            lbSLYC.Text = MaHSDGV.Rows.Count.ToString();
-            lbSLTC.Text = TuChoiDGV.Rows.Count.ToString();
+            lbSLYC.Text = (MaHSDGV.Rows.Count - 1).ToString();
+            lbSLTC.Text = (TuChoiDGV.Rows.Count - 1).ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -154,9 +150,9 @@ namespace PTTK
 
         private void MaHSDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string MaHS = MaHSDGV.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string MaHS = MaHSDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
             string CCCD = MaHSDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
-            string NgayNop = MaHSDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string NgayNop = MaHSDGV.Rows[e.RowIndex].Cells[5].Value.ToString();
 
             MHXacThucHoSoDaXuLy form2 = new MHXacThucHoSoDaXuLy(MaHS,CCCD, NgayNop);
             form2.Show();
@@ -164,9 +160,9 @@ namespace PTTK
 
         private void TuChoiDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string MaHS = MaHSDGV.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string CCCD = MaHSDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
-            string NgayNop = MaHSDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string MaHS = TuChoiDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string CCCD = TuChoiDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string NgayNop = TuChoiDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
 
             MHXacThucHoSoDaXuLy form2 = new MHXacThucHoSoDaXuLy(MaHS, CCCD, NgayNop);
             form2.Show();
@@ -174,12 +170,19 @@ namespace PTTK
 
         private void ChapNhanDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string MaHS = MaHSDGV.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string CCCD = MaHSDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
-            string NgayNop = MaHSDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string MaHS = ChapNhanDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string CCCD = ChapNhanDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string NgayNop = ChapNhanDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
 
             MHXacThucHoSoDaXuLy form2 = new MHXacThucHoSoDaXuLy(MaHS, CCCD, NgayNop);
             form2.Show();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            DangKyUngTuyen dk = new DangKyUngTuyen();
+            dk.LuuDangKyUngTuyen(ChoGui, ChapNhan, TuChoi);
+            MessageBox.Show("Thành công");
         }
     }
 }
