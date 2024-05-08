@@ -78,6 +78,7 @@
             this.BtnQuayLai.TabIndex = 17;
             this.BtnQuayLai.Text = "Quay lại";
             this.BtnQuayLai.UseVisualStyleBackColor = true;
+            this.BtnQuayLai.Click += new System.EventHandler(this.BtnQuayLai_Click);
             // 
             // BtnDangKy
             // 
@@ -87,6 +88,7 @@
             this.BtnDangKy.TabIndex = 16;
             this.BtnDangKy.Text = "Đăng ký";
             this.BtnDangKy.UseVisualStyleBackColor = true;
+            this.BtnDangKy.Click += new System.EventHandler(this.BtnDangKy_Click);
             // 
             // label5
             // 

@@ -44,44 +44,54 @@ namespace PTTK.DAO
 
         internal void DangKyUngVien(UngVien ungVien)
         {
-            try
+
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
-                using (SqlConnection connection = new SqlConnection(Program.connString))
+                try
                 {
+                    connection.Open();
                     using (SqlCommand command = new SqlCommand("DangKyUngVien", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.Add(new SqlParameter("@CCCD", SqlDbType.VarChar,10)).Value = ungVien.CCCD;
-                        command.Parameters.Add(new SqlParameter("@HoTen", SqlDbType.VarChar,20)).Value = ungVien.HoTen;
-                        command.Parameters.Add(new SqlParameter("@SDT", SqlDbType.VarChar,10)).Value = ungVien.SDT;
-                        command.Parameters.Add(new SqlParameter("@DiaChi", SqlDbType.VarChar,50)).Value = ungVien.DiaChi;
+                        command.Parameters.Add(new SqlParameter("@CCCD", SqlDbType.VarChar, 10)).Value = ungVien.CCCD;
+                        command.Parameters.Add(new SqlParameter("@HoTen", SqlDbType.VarChar, 20)).Value = ungVien.HoTen;
+                        command.Parameters.Add(new SqlParameter("@SDT", SqlDbType.VarChar, 10)).Value = ungVien.SDT;
+                        command.Parameters.Add(new SqlParameter("@DiaChi", SqlDbType.VarChar, 50)).Value = ungVien.DiaChi;
                         command.ExecuteNonQuery();
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (Exception)
+                {
+                    MessageBox.Show("Có lỗi xảy ra","Cảnh báo");
+                }
+                finally
+                {
+                    connection?.Close();
+                }
+                MessageBox.Show("Đăng ký thành công", "Thông báo");
             }
             
         }
         internal bool KiemTraTonTai(string CCCD)
         {
-            try
+
+            using (SqlConnection connection = new SqlConnection(Program.connString))
             {
-                using (SqlConnection connection = new SqlConnection(Program.connString))
+                try
                 {
+                    connection.Open();
                     using (SqlCommand command = new SqlCommand("Select count(*) from UNG_VIEN where CCCD=@CCCD", connection))
                     {
                         command.Parameters.Add(new SqlParameter("@CCCD", SqlDbType.VarChar)).Value = CCCD;
-                        return Convert.ToInt32(command.ExecuteScalar())==1;
+                        return Convert.ToInt32(command.ExecuteScalar()) == 1;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return true;
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return true;
+                }
+                finally { connection?.Close(); }
             }
         }
     }

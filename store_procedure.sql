@@ -45,6 +45,6 @@ go
 create or alter proc DangKyUngVien(@CCCD varchar(10),@HoTen varchar(20),@SDT varchar(10),@DiaChi varchar(50))
 as
 begin
-	insert into UNG_VIEN values(@CCCD,@HoTen,@SDT,@DiaChi)
+	insert into UNG_VIEN(CCCD,HoTen,SDT,DiaChi) values(@CCCD,@HoTen,@SDT,@DiaChi)
 end
 go
