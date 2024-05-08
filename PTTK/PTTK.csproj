@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangKyUngVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKyUngVien.Designer.cs">
+      <DependentUpon>DangKyUngVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUS\BangCap.cs" />
     <Compile Include="BUS\TTQuangCao.cs" />
     <Compile Include="BUS\TTDangTuyen.cs" />

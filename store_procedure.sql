@@ -42,4 +42,9 @@ begin
 	SELECT * FROM dbo.UNG_VIEN WHERE CCCD = @CCCD
 END
 go
-UPDATE UNG_VIEN SET Anh 
+create or alter proc DangKyUngVien(@CCCD varchar(10),@HoTen varchar(20),@SDT varchar(10),@DiaChi varchar(50))
+as
+begin
+	insert into UNG_VIEN values(@CCCD,@HoTen,@SDT,@DiaChi)
+end
+go
