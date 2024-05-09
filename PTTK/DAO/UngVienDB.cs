@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PTTK.DAO
 {
@@ -29,16 +30,69 @@ namespace PTTK.DAO
                         {
                             UngVien db = new UngVien();
                             db.CCCD = t["CCCD"].ToString();
-                            db.SDT = t["ViTriDangTuyen"].ToString();
+                            db.SDT = t["SDT"].ToString();
                             db.Anh = (byte[])t["Anh"];
-                            db.HoTen = t["YeuCau"].ToString();
-                            db.DiaChi = t["MaSoThue"].ToString();
+                            db.HoTen = t["HoTen"].ToString();
+                            db.DiaChi = t["DiaChi"].ToString();
                             return db;
                         }                        
                     }
                 }
             }
             return new UngVien();
+        }
+
+        internal void DangKyUngVien(UngVien ungVien)
+        {
+
+            using (SqlConnection connection = new SqlConnection(Program.connString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("DangKyUngVien", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add(new SqlParameter("@CCCD", SqlDbType.VarChar, 10)).Value = ungVien.CCCD;
+                        command.Parameters.Add(new SqlParameter("@HoTen", SqlDbType.VarChar, 20)).Value = ungVien.HoTen;
+                        command.Parameters.Add(new SqlParameter("@SDT", SqlDbType.VarChar, 10)).Value = ungVien.SDT;
+                        command.Parameters.Add(new SqlParameter("@DiaChi", SqlDbType.VarChar, 50)).Value = ungVien.DiaChi;
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Có lỗi xảy ra","Cảnh báo");
+                }
+                finally
+                {
+                    connection?.Close();
+                }
+                MessageBox.Show("Đăng ký thành công", "Thông báo");
+            }
+            
+        }
+        internal bool KiemTraTonTai(string CCCD)
+        {
+
+            using (SqlConnection connection = new SqlConnection(Program.connString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("Select count(*) from UNG_VIEN where CCCD=@CCCD", connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@CCCD", SqlDbType.VarChar)).Value = CCCD;
+                        return Convert.ToInt32(command.ExecuteScalar()) == 1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return true;
+                }
+                finally { connection?.Close(); }
+            }
         }
     }
 }

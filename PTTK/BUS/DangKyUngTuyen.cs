@@ -26,5 +26,10 @@ namespace PTTK.BUS
             DangKyUngTuyenDB DangKyUngTuyenDB = new DangKyUngTuyenDB();
             return DangKyUngTuyenDB.LayDangKyUngTuyen(MaTT);
         }
+        public void LuuDangKyUngTuyen(DataTable ChoGui, DataTable ChapNhan, DataTable TuChoi)
+        {
+            DangKyUngTuyenDB DangKyUngTuyenDB = new DangKyUngTuyenDB();
+            DangKyUngTuyenDB.LuuDangKyUngTuyen(ChoGui,ChapNhan,TuChoi);
+        }
     }
 }

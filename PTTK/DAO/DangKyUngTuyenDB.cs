@@ -28,17 +28,30 @@ namespace PTTK.DAO
                         DataTable result1 = new DataTable();
                         DataTable result2 = new DataTable();
                         adapter.Fill(result);
-                        foreach (DataRow row in result.Rows)
+                        adapter.Fill(result1);
+                        adapter.Fill(result2);
+                        for (int i = 0; i < result.Rows.Count; i++)
                         {
-                            if (row["DuDieuKien"].ToString() == "ChapNhan")
+                            if (result.Rows[i]["TrangThai"].ToString() != "ChoGui")
                             {
-                                result1.Rows.Add(row);
-                                result.Rows.Remove(row);
+                                result.Rows.Remove(result.Rows[i]);
+                                i--;
                             }
-                            else if (row["DuDieuKien"].ToString() == "TuChoi")
+                        }
+                        for (int i = 0; i < result1.Rows.Count; i++)
+                        {
+                            if (result1.Rows[i]["TrangThai"].ToString() != "ChapNhan")
                             {
-                                result2.Rows.Add(row);
-                                result.Rows.Remove(row);
+                                result1.Rows.Remove(result1.Rows[i]);
+                                i--;
+                            }
+                        }
+                        for (int i = 0; i < result2.Rows.Count; i++)
+                        {
+                            if (result2.Rows[i]["TrangThai"].ToString() != "TuChoi")
+                            {
+                                result2.Rows.Remove(result2.Rows[i]);
+                                i--;
                             }
                         }
                         return (result,result1,result2);
@@ -55,34 +68,35 @@ namespace PTTK.DAO
                 using (SqlCommand command = new SqlCommand("LuuDangKyUngTuyen", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-
+                    connection.Open();
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
                         foreach (DataRow row in ChoGui.Rows)
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
-                            command.Parameters.Add(new SqlParameter("@DuDieuKien", SqlDbType.VarChar)).Value = "ChoGui";
+                            command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "ChoGui";
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
-                            command.Parameters.Remove(command.Parameters["@DuDieuKien"]);
+                            command.Parameters.Remove(command.Parameters["@TrangThai"]);
                         }
                         foreach (DataRow row in ChapNhan.Rows)
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
-                            command.Parameters.Add(new SqlParameter("@DuDieuKien", SqlDbType.VarChar)).Value = "ChapNhan";
+                            command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "ChapNhan";
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
-                            command.Parameters.Remove(command.Parameters["@DuDieuKien"]);
+                            command.Parameters.Remove(command.Parameters["@TrangThai"]);
                         }
                         foreach (DataRow row in TuChoi.Rows)
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
-                            command.Parameters.Add(new SqlParameter("@DuDieuKien", SqlDbType.VarChar)).Value = "TuChoi";
+                            command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "TuChoi";
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
-                            command.Parameters.Remove(command.Parameters["@DuDieuKien"]);
+                            command.Parameters.Remove(command.Parameters["@TrangThai"]);
                         }
                     }
+                    connection.Close();
                 }
             }
         }

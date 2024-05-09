@@ -26,6 +26,16 @@ namespace PTTK.BUS
             UngVienDB UngVienDB = new UngVienDB();
             return UngVienDB.LayThongTinUngVien(CCCD);
         }
+        public void DangKyUngVien(UngVien ungVien)
+        {
+            UngVienDB ungVienDB=new UngVienDB();
+            ungVienDB.DangKyUngVien(ungVien);
+        }
+        public bool KiemTraTonTai(string CCCD)
+        {
+            UngVienDB ungVienDB=new UngVienDB();
+            return ungVienDB.KiemTraTonTai(CCCD);
+        }
 
     }
 }
