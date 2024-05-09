@@ -12,15 +12,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PTTK
 {
-    public partial class GiaHanHopDong : Form
+    public partial class MHGiaHanHopDong : Form
     {
-        public GiaHanHopDong()
+        public MHGiaHanHopDong()
         {
             InitializeComponent();
             Load_form();
         }
 
-        private void Load_form()
+        public void Load_form()
         {
             using (SqlConnection connection = new SqlConnection(Program.connString))
             {
@@ -55,14 +55,44 @@ namespace PTTK
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChitietGiahanHD form2 = new ChitietGiahanHD();
-            form2.SetDataFromForm1(TextBoxData);
+            MHChitietGiahanHD form2 = new MHChitietGiahanHD();
+            form2.SetDataFromGHHD(TextBoxData);
+            form2.FormClosed += refreshData;
             form2.Show();
+        }
+
+        private void refreshData(object sender, FormClosedEventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(Program.connString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand("usp_LocDoanhNghiepQuaHanTT", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    dataGridView1.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Load_form();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

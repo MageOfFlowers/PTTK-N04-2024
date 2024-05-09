@@ -12,11 +12,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PTTK
 {
-    public partial class ChitietGiahanHD : Form
+    public partial class MHChitietGiahanHD : Form
     {
         private DateTime dateTimePickerBatDauTuyenOldValue;
         private DateTime dateTimePickerKetThucTuyenOldValue;
-        public ChitietGiahanHD()
+        public MHChitietGiahanHD()
         {
             InitializeComponent();
             textBox1.Enabled = false;
@@ -27,7 +27,7 @@ namespace PTTK
             textBox6.Enabled = false;
         }
 
-        public void SetDataFromForm1(string data)
+        public void SetDataFromGHHD(string data)
         {
             using (SqlConnection connection = new SqlConnection(Program.connString))
             {
@@ -111,7 +111,7 @@ namespace PTTK
 
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("Cập nhật thành công!");
+                    MessageBox.Show("Gia hạn thành công!");
                 }
                 catch (Exception ex)
                 {
@@ -154,6 +154,8 @@ namespace PTTK
             //MessageBox.Show("Hợp lệ");
 
             Update_TTDangTuyen();
+
+            Close();
 
             // Lưu giá trị mới của dateTimePickerBatDauTuyen để sử dụng cho lần kiểm tra sau
             return;
