@@ -8,10 +8,10 @@ namespace PTTK.BUS
 {
     internal class ThanhToan
     {
-        private string MaQC { get; set; }
-        private long SoTien { get; set; }
-        private string PhuongThuc { get; set; }
-        private int LanTT { get; set; }
-        private DateTime NgayTT { get; set; }
+        public string MaQC { get; set; }
+        public long SoTien { get; set; }
+        public string PhuongThuc { get; set; }
+        public int LanTT { get; set; }
+        public DateTime NgayTT { get; set; }
     }
 }

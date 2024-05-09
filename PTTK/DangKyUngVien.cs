@@ -1,13 +1,16 @@
 ﻿using PTTK.BUS;
+using PTTK.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PTTK
 {
@@ -20,7 +23,9 @@ namespace PTTK
 
         private void BtnDangKy_Click(object sender, EventArgs e)
         {
-            UngVien ungVien = new UngVien() { 
+            byte[] img_arr1 = File.ReadAllBytes(avatarImg.FileName);
+            UngVien ungVien = new UngVien() {
+                Anh=img_arr1,
                 CCCD=txtCCCD.Text,
                 HoTen=txtHoTen.Text,
                 DiaChi=txtDiaChi.Text,
@@ -30,6 +35,10 @@ namespace PTTK
             {
                 MessageBox.Show("Xin hãy điền đầy đủ thông tin","Cảnh báo");
             }
+            else if (ungVien.Anh==null)
+            {
+                MessageBox.Show("Xin hãy chọn ảnh đại diện", "Cảnh báo");
+            }
             else if (ungVien.KiemTraTonTai(ungVien.CCCD))
             {
                 MessageBox.Show("Thông tin này đã tồn tại", "Cảnh báo");
@@ -37,12 +46,34 @@ namespace PTTK
             else
             {
                 ungVien.DangKyUngVien(ungVien);
+                Close();
             }
         }
 
         private void BtnQuayLai_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void BtnPickAvt_Click(object sender, EventArgs e)
+        {
+            if (avatarImg.ShowDialog() == DialogResult.OK)
+            {
+                pbAvatar.Image = new Bitmap(avatarImg.FileName);
+                pbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void DangKyUngVien_Load(object sender, EventArgs e)
+        {
+            avatarImg = new OpenFileDialog
+            {
+                Filter = "Images (*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG",
+                Multiselect = false,
+                Title = "Chọn ảnh đại diện",
+                CheckPathExists = true,
+                CheckFileExists = true,
+            };
         }
     }
 }
