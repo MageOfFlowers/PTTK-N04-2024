@@ -196,7 +196,6 @@
             this.Controls.Add(this.label1);
             this.Name = "DangKyUngVien";
             this.Text = "Đăng ký ứng viên";
-            this.Load += new System.EventHandler(this.DangKyUngVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
