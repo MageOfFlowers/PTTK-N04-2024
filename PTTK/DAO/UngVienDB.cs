@@ -53,6 +53,7 @@ namespace PTTK.DAO
                     using (SqlCommand command = new SqlCommand("DangKyUngVien", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add(new SqlParameter("@anh", SqlDbType.VarBinary)).Value = ungVien.Anh;
                         command.Parameters.Add(new SqlParameter("@CCCD", SqlDbType.VarChar, 10)).Value = ungVien.CCCD;
                         command.Parameters.Add(new SqlParameter("@HoTen", SqlDbType.VarChar, 20)).Value = ungVien.HoTen;
                         command.Parameters.Add(new SqlParameter("@SDT", SqlDbType.VarChar, 10)).Value = ungVien.SDT;
@@ -63,6 +64,7 @@ namespace PTTK.DAO
                 catch (Exception)
                 {
                     MessageBox.Show("Có lỗi xảy ra","Cảnh báo");
+                    return;
                 }
                 finally
                 {
