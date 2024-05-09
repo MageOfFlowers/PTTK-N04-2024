@@ -17,10 +17,10 @@ namespace PTTK
         public MHGiaHanHopDong()
         {
             InitializeComponent();
-            Load_form();
+            HienThi();
         }
 
-        public void Load_form()
+        private void HienThi()
         {
             using (SqlConnection connection = new SqlConnection(Program.connString))
             {
@@ -111,6 +111,11 @@ namespace PTTK
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
