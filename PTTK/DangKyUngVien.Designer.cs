@@ -157,7 +157,7 @@
             // 
             // pbAvatar
             // 
-            this.pbAvatar.Location = new System.Drawing.Point(240, 92);
+            this.pbAvatar.Location = new System.Drawing.Point(229, 93);
             this.pbAvatar.Name = "pbAvatar";
             this.pbAvatar.Size = new System.Drawing.Size(102, 112);
             this.pbAvatar.TabIndex = 23;
