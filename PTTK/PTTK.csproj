@@ -53,12 +53,14 @@
       <DependentUpon>DangKyUngVien.cs</DependentUpon>
     </Compile>
     <Compile Include="BUS\BangCap.cs" />
+    <Compile Include="BUS\ThanhToan.cs" />
     <Compile Include="BUS\TTQuangCao.cs" />
     <Compile Include="BUS\TTDangTuyen.cs" />
     <Compile Include="BUS\HoSoDaXuLy.cs" />
     <Compile Include="BUS\UngVien.cs" />
     <Compile Include="BUS\DangKyUngTuyen.cs" />
     <Compile Include="DAO\BangCapDB.cs" />
+    <Compile Include="DAO\ThanhToanDB.cs" />
     <Compile Include="DAO\UngVienDB.cs" />
     <Compile Include="DAO\DangKyUngTuyenDB.cs" />
     <Compile Include="DAO\TTDangTuyenDB.cs" />
