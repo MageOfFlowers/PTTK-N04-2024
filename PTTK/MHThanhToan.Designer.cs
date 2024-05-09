@@ -44,6 +44,7 @@
             this.HinhThuc_lbl = new System.Windows.Forms.Label();
             this.LanTra_lbl = new System.Windows.Forms.Label();
             this.SoTien_lbl = new System.Windows.Forms.Label();
+            this.file_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -191,11 +192,22 @@
             this.SoTien_lbl.TabIndex = 11;
             this.SoTien_lbl.Text = "SoTien_lbl";
             // 
+            // file_btn
+            // 
+            this.file_btn.Location = new System.Drawing.Point(571, 193);
+            this.file_btn.Name = "file_btn";
+            this.file_btn.Size = new System.Drawing.Size(75, 23);
+            this.file_btn.TabIndex = 12;
+            this.file_btn.Text = "button1";
+            this.file_btn.UseVisualStyleBackColor = true;
+            this.file_btn.Click += new System.EventHandler(this.file_btn_Click);
+            // 
             // MHThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.file_btn);
             this.Controls.Add(this.SoTien_lbl);
             this.Controls.Add(this.LanTra_lbl);
             this.Controls.Add(this.HinhThuc_lbl);
@@ -238,5 +250,6 @@
         private System.Windows.Forms.Label HinhThuc_lbl;
         private System.Windows.Forms.Label LanTra_lbl;
         private System.Windows.Forms.Label SoTien_lbl;
+        private System.Windows.Forms.Button file_btn;
     }
 }
