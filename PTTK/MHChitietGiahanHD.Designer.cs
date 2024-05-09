@@ -1,6 +1,6 @@
 ﻿namespace PTTK
 {
-    partial class ChitietGiahanHD
+    partial class MHChitietGiahanHD
     {
         /// <summary>
         /// Required designer variable.
