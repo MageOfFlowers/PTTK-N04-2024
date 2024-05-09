@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTTK.BUS
 {
-    internal class ThanhToan
+    public class ThanhToan
     {
         public string MaQC { get; set; }
         public long SoTien { get; set; }
