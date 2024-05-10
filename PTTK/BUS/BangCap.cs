@@ -14,11 +14,6 @@ namespace PTTK.DAO
         public string TenBangCap { get; set; }
         public string LoaiBangCap { get; set; }
         public string ChiTietBangCap { get; set; }
-        public void ExecuteStoredProcedure(string v, SqlParameter[] parameters)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable TimBangCap(string MaHS)
         {
             BangCapDB BangCapDB = new BangCapDB();

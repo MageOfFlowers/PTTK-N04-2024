@@ -26,10 +26,12 @@ namespace PTTK
             lbDiaChi.Text = "Địa chỉ: " + uv.DiaChi;
             lbSDT.Text = "Điện thoại: " + uv.SDT;
             lbNgayNopHoSo.Text = "Ngày nộp: " + NgayNop;
+            lbMaHS.Text = "Mã Hồ sơ: " + MaHS;
             MemoryStream ms = new MemoryStream(uv.Anh);
             UngVienPB.Image = Image.FromStream(ms);
             UngVienPB.SizeMode = PictureBoxSizeMode.StretchImage;
             BangCapDGV.DataSource = bc.TimBangCap(MaHS);
+            BangCapDGV.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void MHXacThucHoSoDaXuLy_Load(object sender, EventArgs e)

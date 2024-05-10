@@ -16,11 +16,6 @@ namespace PTTK.BUS
         public string SDT { get; set;}
         public string DiaChi { get; set; }
         public byte[] Anh { get; set; }
-        public void ExecuteStoredProcedure(string v, SqlParameter[] parameters)
-        {
-            throw new NotImplementedException();
-        }
-
         public UngVien TimThongTinUngVien(string CCCD)
         {
             UngVienDB UngVienDB = new UngVienDB();

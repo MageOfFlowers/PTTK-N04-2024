@@ -75,25 +75,31 @@ namespace PTTK.DAO
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
                             command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "ChoGui";
+                            command.Parameters.Add(new SqlParameter("@PhanHoi", SqlDbType.VarChar)).Value = row["PhanHoi"];
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
                             command.Parameters.Remove(command.Parameters["@TrangThai"]);
+                            command.Parameters.Remove(command.Parameters["@PhanHoi"]);
                         }
                         foreach (DataRow row in ChapNhan.Rows)
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
                             command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "ChapNhan";
+                            command.Parameters.Add(new SqlParameter("@PhanHoi", SqlDbType.VarChar)).Value = row["PhanHoi"];
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
                             command.Parameters.Remove(command.Parameters["@TrangThai"]);
+                            command.Parameters.Remove(command.Parameters["@PhanHoi"]);
                         }
                         foreach (DataRow row in TuChoi.Rows)
                         {
                             command.Parameters.Add(new SqlParameter("@MaHS", SqlDbType.VarChar)).Value = row["MaHS"];
                             command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar)).Value = "TuChoi";
+                            command.Parameters.Add(new SqlParameter("@PhanHoi", SqlDbType.VarChar)).Value = row["PhanHoi"];
                             command.ExecuteNonQuery();
                             command.Parameters.Remove(command.Parameters["@MaHS"]);
                             command.Parameters.Remove(command.Parameters["@TrangThai"]);
+                            command.Parameters.Remove(command.Parameters["@PhanHoi"]);
                         }
                     }
                     connection.Close();

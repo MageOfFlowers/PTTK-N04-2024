@@ -18,11 +18,6 @@ namespace PTTK.BUS
         public string YeuCau {  get; set; }
         public string MaSoThue {  get; set; }
 
-        public void ExecuteStoredProcedure(string v, SqlParameter[] parameters)
-        {
-            throw new NotImplementedException();
-        }
-
         public IList<TTDangTuyen> TimTTDangTuyen(string MaSoThue)
         {
             TTDangTuyenDB ttDangTuyenDB = new TTDangTuyenDB();
