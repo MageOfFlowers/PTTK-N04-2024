@@ -53,6 +53,11 @@ namespace PTTK
             get { return textBox1.Text; }
         }
 
+        public string TextBoxData2
+        {
+            get { return textBox2.Text; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             MHChitietGiahanHD form2 = new MHChitietGiahanHD();
@@ -63,20 +68,27 @@ namespace PTTK
 
         private void refreshData(object sender, FormClosedEventArgs e)
         {
+            HienThi();
+            Load_DangTuyen(TextBoxData);
+        }
+
+        private void Load_DangTuyen(string data)
+        {
             using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 try
                 {
                     connection.Open();
 
-                    SqlCommand command = new SqlCommand("usp_LocDoanhNghiepQuaHanTT", connection);
+                    SqlCommand command = new SqlCommand("usp_LocDangTuyenQuaHanTT", connection);
                     command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@MaSoThue", data);
 
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
 
-                    dataGridView1.DataSource = dataTable;
+                    dataGridView2.DataSource = dataTable;
                 }
                 catch (Exception ex)
                 {
@@ -87,7 +99,6 @@ namespace PTTK
                     connection.Close();
                 }
             }
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -117,12 +128,30 @@ namespace PTTK
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            string col1Value;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                col1Value = selectedRow.Cells["MaSoThue"].Value.ToString();
+                Load_DangTuyen(col1Value);
+                textBox2.Text = col1Value;
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+   
+        }
 
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string col2Value;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView2.Rows[e.RowIndex];
+                col2Value = selectedRow.Cells["MaTT"].Value.ToString();
+                textBox1.Text = col2Value;
+            }
         }
     }
 }

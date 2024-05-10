@@ -124,6 +124,34 @@ namespace PTTK
             }
         }
 
+        private void HuyGiaHan_TTDangTuyen()
+        {
+            using (SqlConnection connection = new SqlConnection(Program.connString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand("usp_HuyGiahan_TTDangTuyen", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@MaTT", textBox1.Text);
+
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Hủy gia hạn thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
         //Nút gia hạn
         private void button2_Click(object sender, EventArgs e)
         {
@@ -164,7 +192,8 @@ namespace PTTK
         //Nút hủy gia hạn
         private void button1_Click(object sender, EventArgs e)
         {
-
+            HuyGiaHan_TTDangTuyen();
+            Close();
         }
     }
 }
