@@ -54,7 +54,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(31, 115);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(576, 272);
+            this.dataGridView1.Size = new System.Drawing.Size(576, 294);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -87,11 +87,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(243, 415);
+            this.button2.Location = new System.Drawing.Point(243, 419);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 23);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Xác nhận Yêu cầu";
+            this.button2.Text = "Xác nhận";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
