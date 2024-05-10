@@ -45,7 +45,7 @@ namespace PTTK
             }*/
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangKyUngVien());
+            Application.Run(new MHThanhToan());
         }
     }
 }

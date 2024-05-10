@@ -19,16 +19,12 @@ namespace PTTK
         {
             InitializeComponent();
             tt = m_tt;
-            HienThi(tt);
+            HienThi();
         }
         public MHThanhToan()
         {
             InitializeComponent();
-        }
-
-        private void HienThi(ThanhToan tt) 
-        {
-            MaQC_lbl.Text = tt.MaQC;
+            HienThi();
         }
 
         private void MHThanhToan_Load(object sender, EventArgs e)
@@ -36,16 +32,13 @@ namespace PTTK
 
         }
 
-        private void file_btn_Click(object sender, EventArgs e)
+        private void HienThi()
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "All Files (*.*)|*.*";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string selectedFilePath = openFileDialog.FileName;
-                }
-            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

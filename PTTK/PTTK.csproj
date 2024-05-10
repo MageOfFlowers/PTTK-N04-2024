@@ -82,6 +82,12 @@
     <Compile Include="MHXacThucHoSoDaXuLy.Designer.cs">
       <DependentUpon>MHXacThucHoSoDaXuLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHoi.Designer.cs">
+      <DependentUpon>PhanHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DangKyUngVien.resx">
@@ -104,6 +110,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,6 +125,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
