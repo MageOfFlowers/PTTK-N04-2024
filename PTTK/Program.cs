@@ -8,12 +8,14 @@ using System.Drawing.Imaging;
 using System.Data;
 using System.IO;
 using System.Data.SqlClient;
+using PTTK.BUS;
 
 namespace PTTK
 {
     internal static class Program
     {
         public static readonly string connString = "Server=.;Database=QL_HSUT;Integrated Security=True;";
+        public static TaiKhoan taikhoan = new TaiKhoan();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -45,7 +47,11 @@ namespace PTTK
             }*/
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
             Application.Run(new MHThanhToan());
+=======
+            Application.Run(new DangNhap());
+>>>>>>> Stashed changes
         }
     }
 }
