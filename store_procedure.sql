@@ -154,7 +154,7 @@ declare @vt AS VARCHAR(5)
 	WHERE t.TenDangNhap = @TaiKhoan END
 	ELSE 
 	BEGIN 
-	SELECT t.TenDangNhap AS Ten, t.TenDangNhap AS TenDanNhap, t.VaiTro FROM taikhoan t WHERE t.TenDangNhap = @TaiKhoan END
+	SELECT t.TenDangNhap AS Ten, t.TenDangNhap AS TenDangNhap, t.VaiTro FROM taikhoan t WHERE t.TenDangNhap = @TaiKhoan END
     END 
 	ELSE BEGIN SELECT VaiTro FROM taikhoan WHERE TenDangNhap = @TaiKhoan AND @MatKhau = @MatKhau END
 END

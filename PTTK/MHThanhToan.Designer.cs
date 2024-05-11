@@ -67,7 +67,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(477, 9);
+            this.label2.Location = new System.Drawing.Point(526, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(209, 36);
@@ -77,6 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(20, 76);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -87,6 +88,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label5.Location = new System.Drawing.Point(20, 23);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -97,6 +99,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label7.Location = new System.Drawing.Point(399, 76);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
@@ -106,13 +109,16 @@
             // 
             // ThanhToan
             // 
+            this.ThanhToan.BackColor = System.Drawing.Color.Navy;
+            this.ThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ThanhToan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ThanhToan.Location = new System.Drawing.Point(512, 410);
             this.ThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.ThanhToan.Name = "ThanhToan";
             this.ThanhToan.Size = new System.Drawing.Size(144, 28);
             this.ThanhToan.TabIndex = 6;
             this.ThanhToan.Text = "Thanh toán";
-            this.ThanhToan.UseVisualStyleBackColor = true;
+            this.ThanhToan.UseVisualStyleBackColor = false;
             this.ThanhToan.Click += new System.EventHandler(this.ThanhToan_Click);
             // 
             // TT_QuangCao
@@ -135,7 +141,7 @@
             // ChiPhi
             // 
             this.ChiPhi.AutoSize = true;
-            this.ChiPhi.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ChiPhi.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ChiPhi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ChiPhi.Location = new System.Drawing.Point(573, 76);
             this.ChiPhi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -147,7 +153,7 @@
             // MaQC
             // 
             this.MaQC.AutoSize = true;
-            this.MaQC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.MaQC.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.MaQC.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.MaQC.Location = new System.Drawing.Point(192, 76);
             this.MaQC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -159,7 +165,7 @@
             // TenDN
             // 
             this.TenDN.AutoSize = true;
-            this.TenDN.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TenDN.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.TenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.TenDN.Location = new System.Drawing.Point(573, 25);
             this.TenDN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -171,7 +177,7 @@
             // MaSoThue
             // 
             this.MaSoThue.AutoSize = true;
-            this.MaSoThue.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.MaSoThue.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.MaSoThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.MaSoThue.Location = new System.Drawing.Point(192, 25);
             this.MaSoThue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -183,6 +189,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label13.Location = new System.Drawing.Point(20, 25);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
@@ -193,6 +200,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(399, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -224,6 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.Location = new System.Drawing.Point(399, 23);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
@@ -234,16 +243,19 @@
             // LanTra
             // 
             this.LanTra.AutoSize = true;
+            this.LanTra.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LanTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.LanTra.Location = new System.Drawing.Point(573, 23);
             this.LanTra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LanTra.Name = "LanTra";
-            this.LanTra.Size = new System.Drawing.Size(50, 16);
+            this.LanTra.Size = new System.Drawing.Size(56, 16);
             this.LanTra.TabIndex = 5;
             this.LanTra.Text = "LanTra";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label9.Location = new System.Drawing.Point(399, 82);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
@@ -254,16 +266,19 @@
             // SoTien
             // 
             this.SoTien.AutoSize = true;
+            this.SoTien.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SoTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.SoTien.Location = new System.Drawing.Point(573, 82);
             this.SoTien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SoTien.Name = "SoTien";
-            this.SoTien.Size = new System.Drawing.Size(51, 16);
+            this.SoTien.Size = new System.Drawing.Size(57, 16);
             this.SoTien.TabIndex = 5;
             this.SoTien.Text = "SoTien";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label12.Location = new System.Drawing.Point(21, 82);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
@@ -320,7 +335,7 @@
             this.HoaDonPanel.Controls.Add(this.ThanhToan);
             this.HoaDonPanel.Controls.Add(this.label4);
             this.HoaDonPanel.Controls.Add(this.TT_QuangCao);
-            this.HoaDonPanel.Location = new System.Drawing.Point(115, 80);
+            this.HoaDonPanel.Location = new System.Drawing.Point(172, 81);
             this.HoaDonPanel.Margin = new System.Windows.Forms.Padding(4);
             this.HoaDonPanel.Name = "HoaDonPanel";
             this.HoaDonPanel.Size = new System.Drawing.Size(984, 463);
@@ -329,13 +344,16 @@
             // 
             // QuayLai
             // 
+            this.QuayLai.BackColor = System.Drawing.Color.Navy;
+            this.QuayLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.QuayLai.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.QuayLai.Location = new System.Drawing.Point(297, 410);
             this.QuayLai.Margin = new System.Windows.Forms.Padding(4);
             this.QuayLai.Name = "QuayLai";
             this.QuayLai.Size = new System.Drawing.Size(144, 28);
             this.QuayLai.TabIndex = 6;
             this.QuayLai.Text = "Quay lại";
-            this.QuayLai.UseVisualStyleBackColor = true;
+            this.QuayLai.UseVisualStyleBackColor = false;
             this.QuayLai.Click += new System.EventHandler(this.QuayLai_Click);
             // 
             // DSHoaDon
@@ -346,7 +364,7 @@
             this.DSHoaDon.Name = "DSHoaDon";
             this.DSHoaDon.RowHeadersWidth = 51;
             this.DSHoaDon.RowTemplate.Height = 24;
-            this.DSHoaDon.Size = new System.Drawing.Size(1100, 402);
+            this.DSHoaDon.Size = new System.Drawing.Size(1188, 402);
             this.DSHoaDon.TabIndex = 17;
             // 
             // panel3
@@ -356,7 +374,7 @@
             this.panel3.Location = new System.Drawing.Point(35, 116);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1159, 455);
+            this.panel3.Size = new System.Drawing.Size(1245, 455);
             this.panel3.TabIndex = 18;
             // 
             // label14
@@ -374,7 +392,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 607);
+            this.ClientSize = new System.Drawing.Size(1310, 607);
             this.Controls.Add(this.HoaDonPanel);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label2);
