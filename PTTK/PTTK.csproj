@@ -167,6 +167,9 @@
     <EmbeddedResource Include="MMUV.resx">
       <DependentUpon>MMUV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhanHoi.resx">
+      <DependentUpon>PhanHoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

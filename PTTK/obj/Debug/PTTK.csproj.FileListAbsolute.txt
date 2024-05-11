@@ -39,3 +39,4 @@ C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MHThongKeDoanhNghiep.res
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MMDN.resources
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MMNV.resources
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MMUV.resources
+C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.PhanHoi.resources

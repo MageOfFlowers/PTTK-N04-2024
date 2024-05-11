@@ -91,7 +91,7 @@
             // DangNhapbtn
             // 
             this.DangNhapbtn.BackColor = System.Drawing.Color.Navy;
-            this.DangNhapbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.DangNhapbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.DangNhapbtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.DangNhapbtn.Location = new System.Drawing.Point(164, 254);
             this.DangNhapbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -105,7 +105,7 @@
             // DangKybtn
             // 
             this.DangKybtn.BackColor = System.Drawing.Color.Navy;
-            this.DangKybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.DangKybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.DangKybtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.DangKybtn.Location = new System.Drawing.Point(163, 360);
             this.DangKybtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -119,10 +119,10 @@
             // btnDangKy
             // 
             this.btnDangKy.BackColor = System.Drawing.Color.Navy;
-            this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnDangKy.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDangKy.Location = new System.Drawing.Point(163, 308);
-            this.btnDangKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangKy.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(224, 31);
             this.btnDangKy.TabIndex = 7;

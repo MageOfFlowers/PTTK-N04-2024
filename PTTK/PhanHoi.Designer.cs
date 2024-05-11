@@ -35,41 +35,49 @@
             // 
             // PhanHoiRTB
             // 
-            this.PhanHoiRTB.Location = new System.Drawing.Point(31, 42);
+            this.PhanHoiRTB.Location = new System.Drawing.Point(41, 52);
+            this.PhanHoiRTB.Margin = new System.Windows.Forms.Padding(4);
             this.PhanHoiRTB.Name = "PhanHoiRTB";
-            this.PhanHoiRTB.Size = new System.Drawing.Size(390, 105);
+            this.PhanHoiRTB.Size = new System.Drawing.Size(519, 128);
             this.PhanHoiRTB.TabIndex = 0;
             this.PhanHoiRTB.Text = "";
             // 
             // lbPhanHoi
             // 
             this.lbPhanHoi.AutoSize = true;
-            this.lbPhanHoi.Location = new System.Drawing.Point(28, 26);
+            this.lbPhanHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbPhanHoi.Location = new System.Drawing.Point(37, 28);
+            this.lbPhanHoi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPhanHoi.Name = "lbPhanHoi";
-            this.lbPhanHoi.Size = new System.Drawing.Size(65, 13);
+            this.lbPhanHoi.Size = new System.Drawing.Size(108, 20);
             this.lbPhanHoi.TabIndex = 1;
             this.lbPhanHoi.Text = "lbThongBao";
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(343, 153);
+            this.btnLuu.BackColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnLuu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLuu.Location = new System.Drawing.Point(457, 188);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Size = new System.Drawing.Size(100, 28);
             this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Xong";
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // PhanHoi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 188);
+            this.ClientSize = new System.Drawing.Size(607, 231);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.lbPhanHoi);
             this.Controls.Add(this.PhanHoiRTB);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PhanHoi";
-            this.Text = "Form1";
+            this.Text = "Phản hồi";
             this.Load += new System.EventHandler(this.PhanHoi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

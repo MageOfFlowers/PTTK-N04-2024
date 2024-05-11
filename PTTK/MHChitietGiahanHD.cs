@@ -24,7 +24,7 @@ namespace PTTK
             textBox3.Enabled = false;
             textBox4.Enabled = false;
             textBox5.Enabled = false;
-            textBox6.Enabled = false;
+            richTextBox1.Enabled = false;
         }
 
         public void SetDataFromGHHD(string data)
@@ -50,7 +50,7 @@ namespace PTTK
                         textBox5.Text = reader["SoLuongTuyen"].ToString();
                         dateTimePicker1.Value = Convert.ToDateTime(reader["BatDauTuyen"]);
                         dateTimePicker2.Value = Convert.ToDateTime(reader["KetThucTuyen"]);
-                        textBox6.Text = reader["YeuCau"].ToString();
+                        richTextBox1.Text = reader["YeuCau"].ToString();
 
                         dateTimePickerBatDauTuyenOldValue = dateTimePicker1.Value;
                         dateTimePickerKetThucTuyenOldValue = dateTimePicker2.Value;

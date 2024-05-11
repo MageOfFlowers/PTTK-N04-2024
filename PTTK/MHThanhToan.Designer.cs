@@ -65,12 +65,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(526, 9);
+            this.label2.Location = new System.Drawing.Point(535, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(209, 36);
+            this.label2.Size = new System.Drawing.Size(219, 36);
             this.label2.TabIndex = 1;
             this.label2.Text = "THANH TOÁN";
             // 

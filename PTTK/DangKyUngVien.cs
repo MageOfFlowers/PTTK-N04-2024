@@ -175,5 +175,10 @@ namespace PTTK
                 statusDangKy.Text = "";
             };
         }
+
+        private void DangKyUngVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
