@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\DoanhNghiep.cs" />
     <Compile Include="BUS\TaiKhoan.cs" />
+    <Compile Include="ThanhToanController.cs" />
     <Compile Include="DangKyUngVien.cs">
       <SubType>Form</SubType>
     </Compile>
