@@ -23,7 +23,7 @@ namespace PTTK.BUS
 		public DoanhNghiep TimThongTinDoanhNghiep(string MaSoThue)
 		{
 			DoanhNghiepDB doanhNghiepDB = new DoanhNghiepDB();
-			return doanhNghiepDB.LayThongTinDoanhNghiep(MaSoThue);
+			return doanhNghiepDB.LayTTDangTuyen(MaSoThue);
 		}
 		public bool KiemTraTonTai(string MaSoThue)
 		{
@@ -36,5 +36,4 @@ namespace PTTK.BUS
 			doanhNghiepDB.DangKyThanhVien(doanhNghiep);
 		}
 	}
-
 }
