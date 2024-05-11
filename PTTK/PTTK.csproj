@@ -67,11 +67,18 @@
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\BangCapDB.cs" />
+    <Compile Include="DAO\DoanhNghiepDB.cs" />
     <Compile Include="DAO\TaiKhoanDB.cs" />
     <Compile Include="DAO\ThanhToanDB.cs" />
     <Compile Include="DAO\UngVienDB.cs" />
     <Compile Include="DAO\DangKyUngTuyenDB.cs" />
     <Compile Include="DAO\TTDangTuyenDB.cs" />
+    <Compile Include="MHDangKyThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MHDangKyThanhVien.Designer.cs">
+      <DependentUpon>MHDangKyThanhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="MHChitietGiahanHD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MhChonNhaTuyenDung.resx">
       <DependentUpon>MhChonNhaTuyenDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MHDangKyThanhVien.resx">
+      <DependentUpon>MHDangKyThanhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MHGiaHanHopDong.resx">
       <DependentUpon>MHGiaHanHopDong.cs</DependentUpon>
