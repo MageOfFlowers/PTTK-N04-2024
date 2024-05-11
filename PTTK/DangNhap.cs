@@ -59,5 +59,11 @@ namespace PTTK
             }
                 
         }
+
+        private void DangKybtn_Click(object sender, EventArgs e)
+        {
+            DangKyUngVien dangKy=new DangKyUngVien();
+            dangKy.ShowDialog();
+        }
     }
 }

@@ -25,3 +25,10 @@ C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.GenerateResource.
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.csproj.CoreCompileInputs.cache
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.exe
 C:\Users\ACER\Desktop\PTTK-N04-2024\PTTK\obj\Debug\PTTK.pdb
+D:\KHTN\n3_hk2\PTTK\DoAnTH\src\PTTK-N04-2024\PTTK\obj\Debug\PTTK.DangNhap.resources
+D:\KHTN\n3_hk2\PTTK\DoAnTH\src\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MHChitietGiahanHD.resources
+D:\KHTN\n3_hk2\PTTK\DoAnTH\src\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MHGiaHanHopDong.resources
+D:\KHTN\n3_hk2\PTTK\DoAnTH\src\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MHThongKeDoanhNghiep.resources
+D:\KHTN\n3_hk2\PTTK\DoAnTH\src\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MMDN.resources
+D:\KHTN\n3_hk2\PTTK\DoAnTH\src\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MMNV.resources
+D:\KHTN\n3_hk2\PTTK\DoAnTH\src\PTTK-N04-2024\PTTK\obj\Debug\PTTK.MMUV.resources

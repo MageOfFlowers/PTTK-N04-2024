@@ -137,6 +137,9 @@
     <EmbeddedResource Include="DangKyUngVien.resx">
       <DependentUpon>DangKyUngVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MHChitietGiahanHD.resx">
       <DependentUpon>MHChitietGiahanHD.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +157,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MHXacThucHoSoDaXuLy.resx">
       <DependentUpon>MHXacThucHoSoDaXuLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MMDN.resx">
+      <DependentUpon>MMDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MMNV.resx">
+      <DependentUpon>MMNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MMUV.resx">
+      <DependentUpon>MMUV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

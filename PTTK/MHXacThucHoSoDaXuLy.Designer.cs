@@ -106,7 +106,7 @@
             // 
             this.BangCapDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BangCapDGV.Location = new System.Drawing.Point(49, 180);
-            this.BangCapDGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BangCapDGV.Margin = new System.Windows.Forms.Padding(2);
             this.BangCapDGV.Name = "BangCapDGV";
             this.BangCapDGV.RowHeadersWidth = 51;
             this.BangCapDGV.RowTemplate.Height = 24;
@@ -116,7 +116,7 @@
             // UngVienPB
             // 
             this.UngVienPB.Location = new System.Drawing.Point(60, 58);
-            this.UngVienPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UngVienPB.Margin = new System.Windows.Forms.Padding(2);
             this.UngVienPB.Name = "UngVienPB";
             this.UngVienPB.Size = new System.Drawing.Size(79, 96);
             this.UngVienPB.TabIndex = 7;
@@ -146,9 +146,9 @@
             this.Controls.Add(this.lbNgayNopHoSo);
             this.Controls.Add(this.lbHoTen);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MHXacThucHoSoDaXuLy";
-            this.Text = "Form2";
+            this.Text = "Xác thực hồ sơ";
             this.Load += new System.EventHandler(this.MHXacThucHoSoDaXuLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BangCapDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UngVienPB)).EndInit();

@@ -25,14 +25,13 @@ namespace PTTK
 
         private void BtnDangKy_Click(object sender, EventArgs e)
         {
-            byte[] img_arr1=null;
             if (avatarImg.FileName == ""||!avatarImg.CheckFileExists||!avatarImg.CheckPathExists)
             {
                 MessageBox.Show("Xin hãy chọn ảnh đại diện", "Cảnh báo");
             }
             else
             {
-                img_arr1 = File.ReadAllBytes(avatarImg.FileName);
+                byte[] img_arr1 = File.ReadAllBytes(avatarImg.FileName);
                 UngVien ungVien = new UngVien()
                 {
                     Anh = img_arr1,
@@ -87,6 +86,93 @@ namespace PTTK
                 Title = "Chọn ảnh đại diện",
                 CheckPathExists = true,
                 CheckFileExists = true,
+            };
+            txtCCCD.Enter += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhập căn cước công dân";
+            };
+            txtDiaChi.Enter += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhập địa chỉ";
+            };
+            txtHoTen.Enter += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhập họ tên";
+            };
+            txtSDT.Enter += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhập số điện thoại 10-11 số";
+            };
+
+            txtCCCD.Leave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+            txtDiaChi.Leave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+            txtHoTen.Leave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+            txtSDT.Leave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+
+            BtnQuayLai.MouseHover += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhấn để quay lại";
+            };
+            BtnQuayLai.MouseLeave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+
+            BtnPickAvt.MouseHover += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhấn để chọn ảnh đại diện";
+            };
+            BtnPickAvt.MouseLeave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+
+            BtnDangKy.MouseHover += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhấn để đăng ký";
+            };
+            BtnDangKy.MouseLeave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+
+            BtnQuayLai.Enter += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhấn để quay lại";
+            };
+            BtnQuayLai.Leave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+
+            BtnPickAvt.Enter += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhấn để chọn ảnh đại diện";
+            };
+            BtnPickAvt.Leave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
+            };
+
+            BtnDangKy.Enter += (sender, e) =>
+            {
+                statusDangKy.Text = "Nhấn để đăng ký";
+            };
+            BtnDangKy.Leave += (sender, e) =>
+            {
+                statusDangKy.Text = "";
             };
         }
     }

@@ -128,7 +128,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "MHGiaHanHopDong";
-            this.Text = "GiaHanHopDong";
+            this.Text = "Gia hạn hợp đồng";
             this.Load += new System.EventHandler(this.GiaHanHopDong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

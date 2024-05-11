@@ -38,9 +38,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(96, 268);
+            this.button4.Location = new System.Drawing.Point(72, 218);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(184, 31);
+            this.button4.Size = new System.Drawing.Size(138, 25);
             this.button4.TabIndex = 12;
             this.button4.Text = "Đăng xuất";
             this.button4.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(96, 215);
+            this.button3.Location = new System.Drawing.Point(72, 175);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(184, 31);
+            this.button3.Size = new System.Drawing.Size(138, 25);
             this.button3.TabIndex = 11;
             this.button3.Text = "Yêu cầu Đăng tuyển";
             this.button3.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(96, 161);
+            this.button2.Location = new System.Drawing.Point(72, 131);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(184, 31);
+            this.button2.Size = new System.Drawing.Size(138, 25);
             this.button2.TabIndex = 10;
             this.button2.Text = "Duyệt Hồ sơ";
             this.button2.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(274, 21);
+            this.button1.Location = new System.Drawing.Point(206, 17);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 36);
+            this.button1.Size = new System.Drawing.Size(69, 29);
             this.button1.TabIndex = 9;
             this.button1.Text = "Thông báo";
             this.button1.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(162, 121);
+            this.label2.Location = new System.Drawing.Point(122, 98);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
             // 
@@ -88,25 +93,27 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.label1.Location = new System.Drawing.Point(110, 69);
+            this.label1.Location = new System.Drawing.Point(82, 56);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 36);
+            this.label1.Size = new System.Drawing.Size(127, 29);
             this.label1.TabIndex = 7;
             this.label1.Text = "PTTK N04";
             // 
             // MMDN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 358);
+            this.ClientSize = new System.Drawing.Size(284, 291);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MMDN";
-            this.Text = "Form1";
+            this.Text = "Doanh nghiệp";
             this.Load += new System.EventHandler(this.MMDN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
