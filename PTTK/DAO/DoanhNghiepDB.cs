@@ -12,12 +12,12 @@ namespace PTTK.DAO
 {
 	internal class DoanhNghiepDB
 	{
-		internal DoanhNghiep LayThongTinDoanhNghiep(string MaSoThue)
+		internal DoanhNghiep LayTTDangTuyen(string MaSoThue)
 		{
 
 			using (SqlConnection connection = new SqlConnection(Program.connString))
 			{
-				using (SqlCommand command = new SqlCommand("LayThongTinDoanhNghiep", connection))
+				using (SqlCommand command = new SqlCommand("LayTTDangTuyen", connection))
 				{
 					command.CommandType = CommandType.StoredProcedure;
 					command.Parameters.Add(new SqlParameter("@MaSoThue", SqlDbType.VarChar)).Value = MaSoThue;
@@ -34,6 +34,8 @@ namespace PTTK.DAO
 							db.DiaChi = t["DiaChi"].ToString();
 							db.Email = t["Email"].ToString();
 							db.NguoiDaiDien = t["NguoiDaiDien"].ToString();
+							db.TrangThai = t["TrangThai"].ToString(); 
+							db.UuDai = t["UuDai"].ToString();
 							return db;
 						}
 					}
@@ -44,7 +46,6 @@ namespace PTTK.DAO
 
 		internal void DangKyThanhVien(DoanhNghiep doanhNghiep)
 		{
-
 			using (SqlConnection connection = new SqlConnection(Program.connString))
 			{
 				try
@@ -58,12 +59,14 @@ namespace PTTK.DAO
 						command.Parameters.Add(new SqlParameter("@DiaChi", SqlDbType.VarChar, 100)).Value = doanhNghiep.DiaChi;
 						command.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 50)).Value = doanhNghiep.Email;
 						command.Parameters.Add(new SqlParameter("@NguoiDaiDien", SqlDbType.VarChar, 20)).Value = doanhNghiep.NguoiDaiDien;
+						command.Parameters.Add(new SqlParameter("@TrangThai", SqlDbType.VarChar, 20)).Value = DBNull.Value;
+						command.Parameters.Add(new SqlParameter("@UuDai", SqlDbType.VarChar, 10)).Value = DBNull.Value;
 						command.ExecuteNonQuery();
 					}
 				}
-				catch (Exception)
+				catch (Exception ex)
 				{
-					MessageBox.Show("Có lỗi xảy ra", "Cảnh báo");
+					MessageBox.Show("Có lỗi xảy ra:" + ex.Message, "Cảnh báo");
 					return;
 				}
 				finally
@@ -72,7 +75,6 @@ namespace PTTK.DAO
 				}
 				MessageBox.Show("Đăng ký thành công", "Thông báo");
 			}
-
 		}
 		internal bool KiemTraTonTai(string MaSoThue)
 		{ 
