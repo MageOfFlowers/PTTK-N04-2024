@@ -1,13 +1,26 @@
 use QL_HSUT
 GO
-/*
-create or alter proc thanh_toan (@ma_qc varchar, @lan_tra int, @so_tien numeric, @ngay_thanh_toan date, @phuong_thuc varchar)
+--Tai
+create or alter proc lay_ds_hoa_don
+as
+begin
+	select qc.MaQC, qc.TongSoTien, dt.MaSoThue, dn.TenCongTy, dt.MaTT, dt.ViTriTuyen, dt.BatDauTuyen NgayDangTuyen from TT_QUANG_CAO qc join TT_DANG_TUYEN dt on qc.MaTT = dt.MaTT join DOANH_NGHIEP dn on dt.MaSoThue = dn.MaSoThue where TrangThaiThanhToan = 0
+end
+
+go
+create or alter proc lay_lan_thanh_toan (@maqc varchar(10))
+as
+begin
+	select MAX(LanTra) + 1 LanGanNhat from THANH_TOAN where MaQC = @maqc
+end
+
+go
+create or alter proc thuc_hien_thanh_toan (@ma_qc varchar(10), @lan_tra int, @so_tien numeric, @ngay_thanh_toan date, @phuong_thuc varchar(50))
 as
 begin
 	insert into THANH_TOAN values (@ma_qc, @lan_tra, @so_tien, @ngay_thanh_toan, @phuong_thuc)
 END
-O
-*/
+--------------------------------------
 GO
 create or alter proc LayTTDangTuyen (@MaSoThue VARCHAR(10))
 as
@@ -25,7 +38,12 @@ GO
 create or alter proc LayDangKyUngTuyen (@MaTT VARCHAR(10))
 as
 begin
-	SELECT * FROM dbo.DANG_KY_UNG_TUYEN WHERE MaTT = @MaTT AND (TrangThai = 'ChapNhan' OR TrangThai = 'TuChoi' OR TrangThai = 'ChoGui') 
+	SELECT MaHS,
+	HoTen,DANG_KY_UNG_TUYEN.CCCD,
+           DANG_KY_UNG_TUYEN.TrangThai,
+           NgayGui,NgayNop,
+           PhanHoi,
+           DoUuTien FROM dbo.DANG_KY_UNG_TUYEN JOIN dbo.UNG_VIEN ON UNG_VIEN.CCCD = DANG_KY_UNG_TUYEN.CCCD WHERE MaTT = @MaTT AND (TrangThai = 'ChapNhan' OR TrangThai = 'TuChoi' OR TrangThai = 'ChoGui') 
 	ORDER BY DoUuTien desc
 END
 --SELECT * FROM dbo.DANG_KY_UNG_TUYEN AS d JOIN dbo.TT_DANG_TUYEN AS t ON d.MaTT = t.MaTT WHERE t.MaSoThue = 
@@ -120,3 +138,23 @@ BEGIN
     WHERE MaTT = @MaTT;
 END;
 GO
+create or alter proc DangNhap (@TaiKhoan VARCHAR(10), @MatKhau VARCHAR(50))
+as
+BEGIN
+declare @vt AS VARCHAR(5)
+	IF EXISTS(SELECT VaiTro FROM taikhoan WHERE TenDangNhap = @TaiKhoan AND @MatKhau = @MatKhau)
+	BEGIN 
+	IF ((SELECT VaiTro FROM taikhoan WHERE TenDangNhap = @TaiKhoan AND @MatKhau = @MatKhau)='DN')
+	BEGIN 
+	SELECT d.MaSoThue AS TenDangNhap, d.TenCongTy AS Ten, t.VaiTro AS VaiTro FROM taikhoan t JOIN dbo.DOANH_NGHIEP d ON t.TenDangNhap = d.MaSoThue 
+	WHERE t.TenDangNhap = @TaiKhoan END
+	ELSE IF ((SELECT VaiTro FROM taikhoan WHERE TenDangNhap = @TaiKhoan AND @MatKhau = @MatKhau)='UV')
+	BEGIN 
+	SELECT d.CCCD AS TenDangNhap, d.HoTen AS Ten, t.VaiTro AS VaiTro FROM taikhoan t JOIN dbo.UNG_VIEN d ON t.TenDangNhap = d.CCCD 
+	WHERE t.TenDangNhap = @TaiKhoan END
+	ELSE 
+	BEGIN 
+	SELECT t.TenDangNhap AS Ten, t.TenDangNhap AS TenDanNhap, t.VaiTro FROM taikhoan t WHERE t.TenDangNhap = @TaiKhoan END
+    END 
+	ELSE BEGIN SELECT VaiTro FROM taikhoan WHERE TenDangNhap = @TaiKhoan AND @MatKhau = @MatKhau END
+END
