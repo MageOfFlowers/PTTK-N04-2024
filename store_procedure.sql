@@ -16,6 +16,14 @@ begin
 END
 
 GO
+
+create or alter proc DangKyThanhVien (@MaSoThue VARCHAR(10),@TenCongTy varchar(50),@DiaChi varchar(100),@Email varchar(50),@NguoiDaiDien varchar(20),@TrangThai varchar(20),@UuDai varchar(10))
+as
+begin
+	insert into DOANH_NGHIEP values(@MaSoThue,@TenCongTy,@DiaChi,@Email,@NguoiDaiDien,@TrangThai,@UuDai)
+end
+go
+
 create or alter proc LayBangCap (@MaHS VARCHAR(10))
 as
 begin
