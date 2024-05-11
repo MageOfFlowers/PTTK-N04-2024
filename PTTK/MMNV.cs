@@ -43,7 +43,8 @@ namespace PTTK
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            MHThongKeDoanhNghiep form_TK = new MHThongKeDoanhNghiep();
+            form_TK.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
