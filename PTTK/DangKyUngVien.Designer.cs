@@ -157,15 +157,16 @@
             // 
             // pbAvatar
             // 
-            this.pbAvatar.Location = new System.Drawing.Point(229, 93);
+            this.pbAvatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbAvatar.Location = new System.Drawing.Point(242, 92);
             this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(102, 112);
+            this.pbAvatar.Size = new System.Drawing.Size(97, 118);
             this.pbAvatar.TabIndex = 23;
             this.pbAvatar.TabStop = false;
             // 
             // BtnPickAvt
             // 
-            this.BtnPickAvt.Location = new System.Drawing.Point(348, 137);
+            this.BtnPickAvt.Location = new System.Drawing.Point(378, 137);
             this.BtnPickAvt.Name = "BtnPickAvt";
             this.BtnPickAvt.Size = new System.Drawing.Size(75, 23);
             this.BtnPickAvt.TabIndex = 24;

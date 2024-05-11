@@ -76,7 +76,6 @@ namespace PTTK.DAO
         }
         internal bool KiemTraTonTai(string CCCD)
         {
-
             using (SqlConnection connection = new SqlConnection(Program.connString))
             {
                 try
@@ -88,13 +87,16 @@ namespace PTTK.DAO
                         return Convert.ToInt32(command.ExecuteScalar()) == 1;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message);
                     return true;
                 }
-                finally { connection?.Close(); }
+                finally 
+                { 
+                    connection?.Close(); 
+                }
             }
+            
         }
     }
 }
