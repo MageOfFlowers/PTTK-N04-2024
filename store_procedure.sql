@@ -48,3 +48,75 @@ begin
 	insert into UNG_VIEN values(@anh,@CCCD,@HoTen,@SDT,@DiaChi)
 end
 go
+
+--Tin
+CREATE or alter PROCEDURE [dbo].[usp_GetDoanhNghiep]
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT *
+    FROM DOANH_NGHIEP;
+END;
+
+go
+
+CREATE OR ALTER PROCEDURE [dbo].[usp_LocDoanhNghiepQuaHanTT]
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT DN.MaSoThue, DN.TenCongTy, DN.DiaChi, DN.Email, DN.NguoiDaiDien
+    FROM DOANH_NGHIEP DN
+    INNER JOIN TT_DANG_TUYEN TT ON DN.MaSoThue = TT.MaSoThue
+    WHERE TT.TrangThai = '1';
+END;
+go
+
+CREATE OR ALTER PROCEDURE [dbo].[usp_LocDangTuyenQuaHanTT]
+	@MaSoThue VARCHAR(10)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT *
+    FROM TT_DANG_TUYEN TT
+    WHERE MaSoThue = @MaSoThue and TrangThai = '1';
+END;
+go
+
+CREATE OR ALTER PROCEDURE [dbo].[usp_GetTTDangTuyenByMaTT]
+    @MaTT VARCHAR(10)
+AS
+BEGIN
+    SET NOCOUNT ON;
+	SELECT TT.MaTT, DN.MaSoThue, DN.TenCongTy,
+           TT.ViTriTuyen, TT.SoLuongTuyen, TT.BatDauTuyen, TT.KetThucTuyen, TT.YeuCau
+    FROM DOANH_NGHIEP DN
+    INNER JOIN TT_DANG_TUYEN TT ON DN.MaSoThue = TT.MaSoThue
+    WHERE TT.MaTT = @MaTT;
+END;
+go
+
+CREATE OR ALTER PROCEDURE [dbo].[usp_UpdateTTDangTuyen]
+    @MaTT VARCHAR(10),
+    @BatDauTuyen DATETIME,
+    @KetThucTuyen DATETIME
+AS
+BEGIN
+    UPDATE TT_DANG_TUYEN
+    SET BatDauTuyen = @BatDauTuyen,
+        KetThucTuyen = @KetThucTuyen,
+        TrangThai = '0'
+    WHERE MaTT = @MaTT;
+END;
+go
+
+CREATE OR ALTER PROCEDURE [dbo].[usp_HuyGiahan_TTDangTuyen]
+    @MaTT VARCHAR(10)
+AS
+BEGIN
+    UPDATE TT_DANG_TUYEN
+    SET TrangThai = '-1'
+    WHERE MaTT = @MaTT;
+END;
+GO
