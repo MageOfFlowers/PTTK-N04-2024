@@ -1,13 +1,26 @@
 use QL_HSUT
 GO
-/*
-create or alter proc thanh_toan (@ma_qc varchar, @lan_tra int, @so_tien numeric, @ngay_thanh_toan date, @phuong_thuc varchar)
+--Tai
+create or alter proc lay_ds_hoa_don
+as
+begin
+	select qc.MaQC, qc.TongSoTien, dt.MaSoThue, dn.TenCongTy, dt.MaTT, dt.ViTriTuyen, dt.BatDauTuyen NgayDangTuyen from TT_QUANG_CAO qc join TT_DANG_TUYEN dt on qc.MaTT = dt.MaTT join DOANH_NGHIEP dn on dt.MaSoThue = dn.MaSoThue where TrangThaiThanhToan = 0
+end
+
+go
+create or alter proc lay_lan_thanh_toan (@maqc varchar(10))
+as
+begin
+	select MAX(LanTra) + 1 LanGanNhat from THANH_TOAN where MaQC = @maqc
+end
+
+go
+create or alter proc thuc_hien_thanh_toan (@ma_qc varchar(10), @lan_tra int, @so_tien numeric, @ngay_thanh_toan date, @phuong_thuc varchar(50))
 as
 begin
 	insert into THANH_TOAN values (@ma_qc, @lan_tra, @so_tien, @ngay_thanh_toan, @phuong_thuc)
 END
-O
-*/
+--------------------------------------
 GO
 create or alter proc LayTTDangTuyen (@MaSoThue VARCHAR(10))
 as
