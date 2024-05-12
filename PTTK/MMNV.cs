@@ -47,7 +47,7 @@ namespace PTTK
             form_TK.Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+            private void label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -55,6 +55,12 @@ namespace PTTK
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MHThanhToan mHThanhToan = new MHThanhToan();
+            mHThanhToan.Show();
         }
     }
 }
