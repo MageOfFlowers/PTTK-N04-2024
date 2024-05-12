@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\DoanhNghiep.cs" />
     <Compile Include="BUS\TaiKhoan.cs" />
+    <Compile Include="ThanhToanController.cs" />
     <Compile Include="DangKyUngVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MMUV.resx">
       <DependentUpon>MMUV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHoi.resx">
+      <DependentUpon>PhanHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
