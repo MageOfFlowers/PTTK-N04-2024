@@ -67,6 +67,7 @@
             this.MatKhauTB.Location = new System.Drawing.Point(165, 206);
             this.MatKhauTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MatKhauTB.Name = "MatKhauTB";
+            this.MatKhauTB.PasswordChar = '*';
             this.MatKhauTB.Size = new System.Drawing.Size(224, 22);
             this.MatKhauTB.TabIndex = 2;
             // 

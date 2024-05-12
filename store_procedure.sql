@@ -48,10 +48,10 @@ begin
 END
 --SELECT * FROM dbo.DANG_KY_UNG_TUYEN AS d JOIN dbo.TT_DANG_TUYEN AS t ON d.MaTT = t.MaTT WHERE t.MaSoThue = 
 go
-create or alter proc LuuDangKyUngTuyen (@MaHS VARCHAR(10), @TrangThai VARCHAR(10))
+create or alter proc LuuDangKyUngTuyen (@MaHS VARCHAR(10), @TrangThai VARCHAR(10), @PhanHoi VARCHAR(10))
 as
 begin
-	UPDATE dbo.DANG_KY_UNG_TUYEN SET TrangThai = @TrangThai WHERE MaHS = @MaHS
+	UPDATE dbo.DANG_KY_UNG_TUYEN SET TrangThai = @TrangThai, PhanHoi = @PhanHoi WHERE MaHS = @MaHS
 END
 GO
 create or alter proc LayThongTinUngVien (@CCCD VARCHAR(10))
